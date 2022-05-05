@@ -3,27 +3,33 @@ body {
   font-weight: 400;
   line-height: 1.7;
   //font-size: 16px;
-  padding: 3rem;
   color: $color-grey-dark;
 }
 
 .primary-heading {
   color: white;
   text-transform: uppercase;
-  padding-bottom: 60px;
+  padding-bottom: 6rem;
   &--main {
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
     animation: moveinleft 2s ease-out;
+    @include respond(phone) {
+      font-size: 5rem;
+      letter-spacing: 1rem;
+    }
   }
   &--sub {
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 17px;
+    letter-spacing: 1.7rem;
     animation: moveinright 2s ease-out;
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
   }
 }
 
@@ -42,6 +48,13 @@ body {
   letter-spacing: 0.2rem;
   transition: all 0.2s;
 
+  @include respond(tab-port) {
+    font-size: 2.5rem;
+  }
+  @include respond(phone) {
+    font-size: 2rem;
+  }
+
   &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
@@ -51,6 +64,12 @@ body {
   font-size: $default-font-size;
   font-weight: 700;
   text-transform: uppercase;
+
+  &--edit {
+    @include respond(phone) {
+      display: inline-block;
+    }
+  }
 }
 .paragraph {
   font-size: $default-font-size;
