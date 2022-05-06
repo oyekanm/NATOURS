@@ -113,9 +113,6 @@
   &__checkbox:checked ~ &__background {
     transform: scale(80);
   }
-  &__checkbox:checked ~ &__background &__link:active {
-    transform: scale(0);
-  }
 
   &__checkbox:checked ~ &__nav {
     opacity: 1;

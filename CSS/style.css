@@ -524,7 +524,7 @@ body {
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
-  transition: all .3s; }
+  transition: all 0.3s; }
   .popup__content {
     position: absolute;
     top: 50%;
@@ -538,18 +538,38 @@ body {
     overflow: hidden;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.25);
-    transition: all .5s .2s; }
+    transition: all 0.5s 0.2s; }
+    @media screen and (max-width: 56.25em) {
+      .popup__content {
+        text-align: center; } }
   .popup__left {
     width: 33.333333%;
     display: table-cell; }
+    @media screen and (max-width: 56.25em) {
+      .popup__left {
+        width: 100%;
+        display: block; } }
   .popup__right {
     width: 66.6666667%;
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem; }
+    @media screen and (max-width: 56.25em) {
+      .popup__right {
+        width: 100%;
+        display: block; } }
+    @media screen and (max-width: 37.5em) {
+      .popup__right {
+        padding: 0.5rem 1rem; } }
   .popup__img {
     display: block;
     width: 100%; }
+    @media screen and (max-width: 56.25em) {
+      .popup__img {
+        height: 20rem;
+        width: 50%;
+        display: inline-block;
+        float: right; } }
   .popup__text {
     font-size: 1.4rem;
     margin-bottom: 4rem;
@@ -563,6 +583,13 @@ body {
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto; }
+    @media screen and (max-width: 37.5em) {
+      .popup__text {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        column-gap: 2rem;
+        margin-bottom: 0.5rem;
+        column-count: 1; } }
   .popup:target {
     opacity: 1;
     visibility: visible; }
@@ -577,8 +604,12 @@ body {
     font-size: 3rem;
     text-decoration: none;
     display: inline-block;
-    transition: all .2s;
+    transition: all 0.2s;
     line-height: 1; }
+    @media screen and (max-width: 37.5em) {
+      .popup__close:link, .popup__close:visited {
+        top: 0.5rem;
+        font-size: 4rem; } }
   .popup__close:hover {
     color: #55c57a; }
 
@@ -874,9 +905,6 @@ body {
 
 .navigation__checkbox:checked ~ .navigation__background {
   transform: scale(80); }
-
-.navigation__checkbox:checked ~ .navigation__background .navigation__link:active {
-  transform: scale(0); }
 
 .navigation__checkbox:checked ~ .navigation__nav {
   opacity: 1;
